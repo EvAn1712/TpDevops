@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/JAVA/simpleapi/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA/simple-api-student-main/pom.xml" />
+        <option value="$PROJECT_DIR$/Backend/simple-api-student-main/pom.xml" />
+        <option value="$PROJECT_DIR$/Backend/simpleapi/pom.xml" />
+        <option value="$PROJECT_DIR$/simpleapi/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Backend/simple-api-student-main/pom.xml" />
+        <option value="$PROJECT_DIR$/Backend/simpleapi/pom.xml" />
+        <option value="$PROJECT_DIR$/simpleapi/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

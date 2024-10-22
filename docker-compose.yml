@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  backend:
+    build:
+      context: ./simpleapi
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    networks:
+      - app-network
+    container_name: mybackend
+    depends_on:
+      - database
+
+  database:
+    build:
+      context: ./Database
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    networks:
+      - app-network
+    container_name: database
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  http:
+    build:
+      context: ./http
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    container_name: http
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+
+volumes:
+  db-data:
