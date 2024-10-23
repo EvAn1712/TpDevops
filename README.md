@@ -140,5 +140,18 @@ volumes:  # Définition des volumes
   db-data: 
 ```
 ### 1-5 Document your publication commands and published images in dockerhub.
-
 ### Question 5: Why do we put our images into an online repo?
+Le **tagging** d'une image permet de donner un nom clair et une version à l'image Docker, ce qui est essentiel pour suivre les différentes versions publiées de votre image. Cela facilite également l'identification de l'image à utiliser, surtout si plusieurs versions sont disponibles. 
+```bash
+docker tag tp_devops-database evan024/my-database:1.0
+```
+Puis on peut push notre image sur docker avec la commande :
+```bash
+docker push evan024/my-database:1.0
+```
+L'image Docker est maintenant publiée et prête à être utilisée par les autres collaborateurs.
+```bash
+docker pull evan024/my-database:1.0
+```
+<img width="799" alt="image" src="https://github.com/user-attachments/assets/24ae3188-8da4-4dac-a2ca-3341683810ce">
+
