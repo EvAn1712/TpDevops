@@ -4,15 +4,15 @@
 
 ### Question 1: Why should we run the container with a flag -e to give the environment variables?
 	
-Le flag -e est utilisé pour passer des variables d'environnement au conteneur, ce qui permet de configurer l'application (par exemple, les identifiants de connexion ou les paramètres spécifiques) sans modifier l'image Docker elle-même. Cela rend l'exécution du conteneur adaptable à différents environnements (développement, production, etc.).
+Le flag -e est utilisé pour passer des variables d'environnement au conteneur, ce qui permet de configurer l'application (par exemple, les identifiants de connexion ou les paramètres spécifiques) sans modifier l'image Docker elle-même.
 
 ### Question 2: Why do we need a volume to be attached to our postgres container?
 
-Attacher un volume à un conteneur PostgreSQL permet de stocker les données en dehors du conteneur. Ainsi, même si le conteneur est arrêté ou supprimé, les données restent accessibles. C'est essentiel pour éviter la perte des données de la base de données et garantir leur persistance à long terme.
+Attacher un volume à un conteneur PostgreSQL permet de stocker les données en dehors du conteneur. Ainsi, même si le conteneur est arrêté ou supprimé, les données restent accessibles. C'est essentiel notamment pour éviter la perte des données de la base de données et garantir leur persistance.
 
 ### 1-1 Document your database container essentials: commands and Dockerfile.
 
-Nous utiliserons l'image : `postgres:14.1-alpine`. Voici le Dockerfile :
+Voici le Dockerfile :
 
 `Dockerfile`
 ```
@@ -37,12 +37,11 @@ Exécuter le conteneur PostgreSQL :
 docker run --name mydatabase -v /mon/dossier/datadir:/var/lib/postgresql/data --net=app-network -d database
 ```
 
-L'utilisation du volume (`-v`) permet que les données persisteront même si le conteneur est supprimé
+L'utilisation du volume (`-v`) permet que les données persistent même si le conteneur est supprimé
 
 ### 1-2 Why do we need a multistage build? And explain each step of this dockerfile.
 
 Le build multi-étape permet de réduire la taille des images Docker et de séparer l'étape de construction (build) de l'étape d'exécution (run). Cela permet d'avoir une image finale plus légère et plus sécurisée.
-Le build multi-étape permet de créer des images Docker plus légères et sécurisées. En séparant les étapes de construction et d'exécution, nous n'incluons que les fichiers nécessaires à l'exécution de l'application dans l'image finale.
 
 #### Étapes du Dockerfile
 
