@@ -12,9 +12,8 @@ Attacher un volume à un conteneur PostgreSQL permet de stocker les données en 
 
 ### 1-1 Document your database container essentials: commands and Dockerfile.
 
-Voici le Dockerfile :
+Voici le `Dockerfile` :
 
-`Dockerfile`
 ```
 FROM postgres:14.1-alpine
 
