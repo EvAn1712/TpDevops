@@ -25,7 +25,7 @@ Nous pouvons y trouver les informations de connexions our accédez à la base de
 
 Construire l'image Docker :
 ```
-docker build -t database
+docker build -t database .
 ```
 Créer un réseau :
 ```
